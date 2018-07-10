@@ -71,12 +71,12 @@ resource "aws_cloudwatch_metric_alarm" "default" {
   alarm_name          = "${local.metric_name[count.index]}-alarm"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = "1"
-  metric_name         = "${local.metric_name[count.index]}"
+  metric_name         = "ph-${var.ph_environment}-${local.metric_name[count.index]}"
   namespace           = "${local.metric_namespace}"
   period              = "300"                                                                         // 5 min
   statistic           = "Sum"
   treat_missing_data  = "notBreaching"
-  threshold           = "${local.metric_name[count.index] == "ConsoleSignInFailureCount" ? "3" :"1"}"
+  threshold           = "${local.metric_name[count.index] == "ConsoleSignInFailureCount" ? "6" :"1"}"
   alarm_description   = "${local.alarm_description[count.index]}"
   alarm_actions       = ["${local.endpoints}"]
 }

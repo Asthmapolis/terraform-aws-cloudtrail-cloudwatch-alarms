@@ -35,3 +35,7 @@ variable "create_dashboard" {
   description = "When true a dashboard that displays tha statistics as a line graph will be created in CloudWatch"
   default     = "true"
 }
+
+variable "ph_environment" {
+  description = "PH Environment associated with this installation."
+}
