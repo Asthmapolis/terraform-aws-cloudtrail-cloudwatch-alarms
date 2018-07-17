@@ -6,7 +6,7 @@ variable "additional_endpoint_arns" {
 
 variable "sns_topic_arn" {
   description = "An SNS topic ARN that has already been created. Its policy must already allow access from CloudWatch Alarms, or set `add_sns_policy` to `true`"
-  default     = ""
+  default     = "arn:aws:sns:us-west-2:779038906119:cloudwatch-alarms"
   type        = "string"
 }
 
