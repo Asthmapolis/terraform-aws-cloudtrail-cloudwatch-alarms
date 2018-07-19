@@ -38,7 +38,6 @@ Here's a complete [example](examples/simple/main.tf) of using this `terraform-aw
 
 
 
-
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -48,9 +47,9 @@ Here's a complete [example](examples/simple/main.tf) of using this `terraform-aw
 | create_dashboard | When true a dashboard that displays tha statistics as a line graph will be created in CloudWatch | string | `true` | no |
 | log_group_name | The cloudtrail cloudwatch log group name | string | - | yes |
 | metric_namespace | A namespace for grouping all of the metrics together | string | `CISBenchmark` | no |
+| ph_environment | PH Environment associated with this installation. | string | - | yes |
 | region | The region that should be monitored for unauthorised AWS API Access. Current region used if none provied. | string | `` | no |
-| sns_topic_arn | An SNS topic ARN that has already been created. Its policy must already allow access from CloudWatch Alarms, or set `add_sns_policy` to `true` | string | `` | no |
-| ph_environment | PH Environment associated with this installation. | string | `` | yes |
+| sns_topic_arn | An SNS topic ARN that has already been created. Its policy must already allow access from CloudWatch Alarms, or set `add_sns_policy` to `true` | string | `arn:aws:sns:us-west-2:779038906119:cloudwatch-alarms` | no |
 
 ## Outputs
 
@@ -59,6 +58,7 @@ Here's a complete [example](examples/simple/main.tf) of using this `terraform-aw
 | dashboard_combined | URL to CloudWatch Combined Metric Dashboard |
 | dashboard_individual | URL to CloudWatch Individual Metric Dashboard |
 | sns_topic_arn | The ARN of the SNS topic used |
+
 
 ## Metrics Tracked
 
@@ -220,5 +220,6 @@ Check out [our other projects][github], [apply for a job][jobs], or [hire us][hi
   [Jamie-BitFlight_avatar]: https://avatars0.githubusercontent.com/u/25075504?s=144&u=ac7e53bda3706cb9d51907808574b6d342703b3e&v=4
   [antonbabenko_homepage]: https://github.com/antonbabenko
   [antonbabenko_avatar]: https://avatars3.githubusercontent.com/u/393243?s=144&v=4
+
 
 
